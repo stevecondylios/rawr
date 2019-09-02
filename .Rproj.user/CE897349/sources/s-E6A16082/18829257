@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567399062239.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "18829257",
+    "lastKnownWriteTime" : 1567418634,
+    "last_content_update" : 1567418634323,
+    "path" : "~/rawr/R/kaggle.R",
+    "project_path" : "R/kaggle.R",
+    "properties" : {
+        "cursorPosition" : "19,55",
+        "scrollLine" : "9",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

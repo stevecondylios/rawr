@@ -1,0 +1,15 @@
+Package: rawr
+Type: Package
+Title: Retreive Raw R Code from Popular Tutorials and Websites
+Version: 0.1.0
+Author: Steve Condylios [aut, cre] (<https://orcid.org/0000-0003-0599-844X>)
+Maintainer: Steve Condylios <steve.condylios@gmail.com>
+BugReports: https://github.com/stevecondylios/rawr/issues
+License: MIT + file LICENSE
+URL: https://github.com/stevecondylios/rawr
+Description: Allows fast and simple retrieval of R code from
+    popular webpages, including kaggle and github.
+Encoding: UTF-8
+LazyData: true
+Imports: rvest, dplyr, stringr, jsonlite, xml2
+RoxygenNote: 6.1.1
