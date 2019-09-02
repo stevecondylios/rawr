@@ -7,7 +7,8 @@
 #'
 #' @param url Link to datacamp tutorial
 #'
-#' @import rvest dplyr jsonlite xml2
+#' @import dplyr jsonlite xml2
+#' @importFrom rvest html_nodes html_text html_attr
 #'
 #' @export
 #'
