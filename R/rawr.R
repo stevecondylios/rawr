@@ -1,4 +1,4 @@
-#' Retreive Raw R Code from Popular Tutorials and Websites
+#' Retrieve Raw R Code from Popular Tutorials and Websites
 #' @docType package
 #'
 #' @details
