@@ -8,8 +8,9 @@
 Retreive Raw R Code from Popular Tutorials and Websites
 }
 \details{
-It has the goal of providing a very simple and easy way of quickly retrieving the raw R code from
-    popular coding websites, including github, kaggle, and data camp.
+It has the goal of providing a very simple and easy way of quickly retrieving (just the)
+    raw R code from popular websites that display R code, including github, kaggle,
+    and data camp.
 }
 \author{
 Steve Condylios \email{steve.condylios@gmail.com}
