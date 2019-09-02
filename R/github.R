@@ -7,7 +7,7 @@
 #'
 #' @param url Link to an R file on github website
 #'
-#' @import rvest dplyr stringr jsonlite xml2
+#' @import rvest dplyr jsonlite xml2
 #'
 #' @export
 #'

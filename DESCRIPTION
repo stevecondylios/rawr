@@ -11,5 +11,5 @@ Description: Allows fast and simple retrieval of R code from
     popular webpages, including kaggle and github.
 Encoding: UTF-8
 LazyData: true
-Imports: rvest, dplyr, stringr, jsonlite, xml2
+Imports: rvest, dplyr, jsonlite, xml2
 RoxygenNote: 6.1.1

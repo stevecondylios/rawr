@@ -7,7 +7,7 @@
 #'
 #' @param url Link to tidytext tutorial
 #'
-#' @import rvest dplyr stringr jsonlite xml2
+#' @import rvest dplyr jsonlite xml2
 #'
 #' @export
 #'
