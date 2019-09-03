@@ -2,7 +2,9 @@
 
 export(datacamp)
 export(github)
+export(identify_domain)
 export(kaggle)
+export(rawr)
 export(tidytext)
 import(dplyr)
 import(jsonlite)

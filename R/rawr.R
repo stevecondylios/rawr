@@ -1,19 +1,59 @@
-#' Retrieve Raw R Code from Popular Tutorials and Websites
-#' @docType package
-#'
-#' @details
-#' It has the goal of providing a very simple and easy way of quickly retrieving (just the)
-#'     raw R code from popular websites that display R code, including github, kaggle,
-#'     and data camp.
+#' Automatically identify website and retrieve raw R code from it
 #'
 #'
-#' @author Steve Condylios \email{steve.condylios@gmail.com}
+#' @name rawr
+#'
+#' @usage rawr(url)
+#'
+#' @param url Link to an R file on supported website (github, kaggle, datacamp, tidytext)
+#'
+#' @import dplyr jsonlite xml2
+#' @importFrom rvest html_nodes html_text html_attr
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
+#'
+#' # Same as above but provided to cat for easy viewing
+#' rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") %>%
+#'   cat
 #'
 #'
+#' # Use on multiple urls
 #'
-#' @name rawr-package
+#' domains <- c("https://github.com/hadley/vis-eda/blob/master/travel.R",
+#' "https://www.datacamp.com/community/tutorials/sentiment-analysis-R",
+#' "https://www.tidytextmining.com/sentiment.html",
+#' "https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 #'
-# NULL
+#' domains %>% sapply(rawr)
+#'}
 
-# quiets concerns of R CMD check re: the .'s that appear in pipelines
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
+
+library(stringr)
+
+
+rawr <- function(url) {
+
+  if(substr(url, 1, 4) != "http") { stop("Invalid url - must start with https or http") }
+
+  # Identify domain
+  domain <- url %>% identify_domain
+
+  if(length(domain) > 1) { stop("rawr::rawr only handles one url at a time,
+                                try sapply(your_urls, rawr::rawr)") }
+
+  switch(domain,
+         "github"= { github(url) },
+         "kaggle"= { kaggle(url) },
+         "datacamp"= { datacamp(url) },
+         "tidytext"= { tidytext(url) }
+  )
+
+}
+
+
+
+

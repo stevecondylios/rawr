@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 CONTRIBUTIONS.md
 README.md
+tests/data/
