@@ -3,9 +3,9 @@
 \docType{package}
 \name{rawr-package}
 \alias{rawr-package}
-\title{Retreive Raw R Code from Popular Tutorials and Websites}
+\title{Retrieve Raw R Code from Popular Tutorials and Websites}
 \description{
-Retreive Raw R Code from Popular Tutorials and Websites
+Retrieve Raw R Code from Popular Tutorials and Websites
 }
 \details{
 It has the goal of providing a very simple and easy way of quickly retrieving (just the)
