@@ -14,7 +14,6 @@ code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-i
 
 # View code easily
 cat(code)
-
 ``` 
 
 
@@ -40,16 +39,12 @@ code %>% cat
 `rawr` currently works for github, kaggle, and datacamp. Try it
 
 ```R
-
 library(rawr)
 library(dplyr)
 
 rawr("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") %>% cat
-
 rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") %>% cat
-
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine") %>% cat
-
 ```
 
 
