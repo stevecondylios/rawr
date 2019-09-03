@@ -18,7 +18,7 @@ cat(code)
 ``` 
 
 
-## Another Example
+## More Examples
 
 [Here](https://www.tidytextmining.com/sentiment.html)'s a tutorial on sentiment analysis using `tidytext`. 
 
@@ -97,7 +97,7 @@ If you're after a new feature, please raise an issue, including:
 You could also consider making a pull request
 
 
-## Pull Requests
+# Pull Requests
 
 Pull requests are welcomed. 
 
