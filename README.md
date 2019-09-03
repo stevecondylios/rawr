@@ -1,11 +1,24 @@
-# Get started using rawr
+# Get Started Using rawr
 
-Websites containing R code sometimes necessitate tedious copy/pasting of code from website to your code editor.
+Websites containing R code sometimes necessitate tedious copy/pasting of code blocks from the website to your code editor in order for you to be able to run the code for yourself.
 
-`rawr` does this for you 
+`rawr` takes care of this with a single function call. 
+
+## Simple Example: Extract R Code from Kaggle Notebook
+
+To get the code from a kaggle notebook simply provide the url to `kaggle()`, like so:
+
+```
+library(rawr)
+code <- kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
+
+# View code easily
+cat(code)
+
+``` 
 
 
-## Example
+## Another Example
 
 [Here](https://www.tidytextmining.com/sentiment.html)'s a tutorial on sentiment analysis using `tidytext`. 
 
@@ -34,16 +47,10 @@ tidytext("https://www.tidytextmining.com/sentiment.html") %>% cat
 #
 # etc..
 
-
-# Or store code as a string
-
-code <- tidytext("https://www.tidytextmining.com/sentiment.html") 
-
-
 ```
 
 
-`rawr` currently also works for datacamp, github, and kaggle.
+`rawr` also works for datacamp, github, and kaggle.
 
 ```R
 
@@ -72,28 +79,33 @@ See:
 
 
 
-# Issue and Pull Request Guidelines
 
-Thank you for helping make rawr better!
+# Issues and Feature Requests
 
-
-## Issues
-
-If you're reporting an issue, it must contain:
+If you're reporting an issue, please include:
 
 * Example code that reproduces the **observed** behavior.
 * An explanation of what the **expected** behavior is.
+* A specific url you're attempting to retrieve R code from (if that's what your issue concerns)
 
+
+If you're after a new feature, please raise an issue, including:
+
+* Describing the functionality you're after
+* Provide examples of the inputs and desired output
+
+You could also consider making a pull request
 
 
 ## Pull Requests
 
 Pull requests are welcomed. 
 
-If you create a function to retrieve R code from another website, please follow these conventions
+If you create a function to retrieve R code from another website, please ensure you
 
-* The function should be named according the name of the website (e.g. if the function retrives R code from `www.example.com`, it should be named `rawr::example()`), unless there's sensible reason to deviate.
+* Where possible, give the function the name of the website domain it works on (e.g. if the function retrives R code from `www.example.com`, the function should be named `rawr::example()`), unless there's some sensible reason to deviate.
 * Please ensure the __intent__ of your contribution is clear.
+* Please provide at least one example url
 
 
 
