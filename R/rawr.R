@@ -32,8 +32,6 @@
 #'}
 
 
-library(stringr)
-
 
 rawr <- function(url) {
 

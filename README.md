@@ -2,7 +2,7 @@
 
 Websites containing R code sometimes necessitate tedious copy/pasting of code blocks from the website to your code editor in order for you to be able to run the code for yourself.
 
-`rawr` takes care of this with a single function call. 
+`rawr` takes care of this.  
 
 ## Simple Example: Extract R Code from Kaggle Notebook
 
@@ -10,7 +10,7 @@ To get the code from a kaggle notebook simply provide the url to `kaggle()`, lik
 
 ```
 library(rawr)
-code <- kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
+code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 
 # View code easily
 cat(code)
@@ -20,48 +20,35 @@ cat(code)
 
 ## More Examples
 
-[Here](https://www.tidytextmining.com/sentiment.html)'s a tutorial on sentiment analysis using `tidytext`. 
+[Here](https://www.tidytextmining.com/sentiment.html)'s a great tutorial. 
 
-You can retrieve all the R code from the page with `rawr::tidytext(url)` like so
+What if you want to run the R code yourself? Easy!
 
 ```R
 library(rawr)
-library(dplyr)
 
-# Print R code to console
-tidytext("https://www.tidytextmining.com/sentiment.html") %>% cat
+code <- rawr("https://www.tidytextmining.com/sentiment.html") 
+```
 
+The output is a little hard to read though! That's easily solved
 
-# library(tidytext)
-# 
-# get_sentiments("afinn")
-# get_sentiments("bing")
-# get_sentiments("nrc")
-# library(janeaustenr)
-# library(dplyr)
-# library(stringr)
-# 
-# tidy_books <- austen_books() %>%
-#   group_by(book) %>%
-#   mutate(linenumber = row_number(),
-#
-# etc..
-
+```R
+code %>% cat
 ```
 
 
-`rawr` also works for datacamp, github, and kaggle.
+`rawr` currently works for github, kaggle, and datacamp. Try it
 
 ```R
 
 library(rawr)
 library(dplyr)
 
-datacamp("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") %>% cat
+rawr("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") %>% cat
 
-github("https://github.com/hadley/vis-eda/blob/master/travel.R") %>% cat
+rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") %>% cat
 
-kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine") %>% cat
+rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine") %>% cat
 
 ```
 
@@ -71,6 +58,7 @@ kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine
 See:
 
 ```R
+?rawr::rawr
 ?rawr::datacamp
 ?rawr::github
 ?rawr::kaggle
@@ -82,30 +70,29 @@ See:
 
 # Issues and Feature Requests
 
-If you're reporting an issue, please include:
+When reporting an issue, please include:
 
 * Example code that reproduces the **observed** behavior.
 * An explanation of what the **expected** behavior is.
 * A specific url you're attempting to retrieve R code from (if that's what your issue concerns)
 
 
-If you're after a new feature, please raise an issue, including:
+For feature requests, raise an issue with the following:
 
-* Describing the functionality you're after
-* Provide examples of the inputs and desired output
+* The desired functionality
+* Example inputs and desired output
 
-You could also consider making a pull request
 
 
 # Pull Requests
 
 Pull requests are welcomed. 
 
-If you create a function to retrieve R code from another website, please ensure you
+Any new functions should follow the conventions established by the the package's existing functions. Please ensure
 
-* Where possible, give the function the name of the website domain it works on (e.g. if the function retrives R code from `www.example.com`, the function should be named `rawr::example()`), unless there's some sensible reason to deviate.
-* Please ensure the __intent__ of your contribution is clear.
-* Please provide at least one example url
+* Functions are sensibly named
+* The __intent__ of the contribution is clear
+* At least one example is provided in the documentation
 
 
 
