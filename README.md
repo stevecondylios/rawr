@@ -6,7 +6,7 @@ Websites containing R code sometimes necessitate tedious copy/pasting of code bl
 
 ## Simple Example: Extract R Code from Kaggle Notebook
 
-To get the code from a kaggle notebook simply provide the url to `kaggle()`, like so:
+To get the code from a kaggle notebook:
 
 ```
 library(rawr)
