@@ -2,9 +2,12 @@
 % Please edit documentation in R/tidytext.R
 \name{tidytext}
 \alias{tidytext}
+\alias{tidytextmining}
 \title{Retrieve raw R code tidytext tutorial}
 \usage{
 tidytext(url)
+
+tidytextmining(url)
 }
 \arguments{
 \item{url}{Link to tidytext tutorial}

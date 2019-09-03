@@ -49,7 +49,7 @@ if(glob$kernelRun$language == "rmarkdown") {
   code <- glob$kernelRun$commit$source %>%
     paste0(., collapse="\n")
 }else{
-  print("Not R markdown")
+  # print("Not R markdown")
   source_code <- glob$kernelRun$commit$source %>% fromJSON
 
   language <- source_code$metadata$language_info$name

@@ -29,3 +29,11 @@ tidytext <- function(url) {
     html_text %>%
     paste0(., collapse="\n")
 }
+
+
+#' @rdname tidytext
+#' @export
+tidytextmining <- tidytext
+
+
+

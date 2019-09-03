@@ -49,7 +49,7 @@ rawr <- function(url) {
          "github"= { github(url) },
          "kaggle"= { kaggle(url) },
          "datacamp"= { datacamp(url) },
-         "tidytext"= { tidytext(url) }
+         "tidytextmining"= { tidytext(url) }
   )
 
 }
