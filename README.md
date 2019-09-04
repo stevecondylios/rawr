@@ -4,11 +4,11 @@ Websites containing R code sometimes necessitate tedious copy/pasting of code bl
 
 `rawr` takes care of this.  
 
-## Simple Example: Extract R Code from Kaggle Notebook
+### Simple Example: Get R Code from a Kaggle Notebook
 
 To get the code from a kaggle notebook:
 
-```
+```R
 library(rawr)
 code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 
@@ -17,7 +17,7 @@ cat(code)
 ``` 
 
 
-## More Examples
+### More Examples
 
 [Here](https://www.tidytextmining.com/sentiment.html)'s a great tutorial. 
 
@@ -36,7 +36,7 @@ code %>% cat
 ```
 
 
-`rawr` currently works for github, kaggle, and datacamp. Try it
+`rawr` currently supports github, kaggle, datacamp, and many blogdown sites. Try it
 
 ```R
 library(rawr)
@@ -45,6 +45,7 @@ library(dplyr)
 rawr("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") %>% cat
 rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") %>% cat
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine") %>% cat
+rawr("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/") %>% cat
 ```
 
 
