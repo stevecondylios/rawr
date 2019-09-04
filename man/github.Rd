@@ -13,12 +13,12 @@ github(url)
 Retrieve raw R code from an .R file hosted on github website
 }
 \examples{
-\dontrun{
+library(dplyr)
 github("https://github.com/hadley/vis-eda/blob/master/travel.R")
 
 # Same as above but provided to cat for easy viewing
 github("https://github.com/hadley/vis-eda/blob/master/travel.R") \%>\%
   cat
 
-}
+
 }

@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' library(dplyr)
 #' datacamp("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
 #' datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning")
 #'
@@ -23,7 +23,7 @@
 #' datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning") %>%
 #'   cat
 #'
-#'}
+#'
 
 
 datacamp <- function(url) {

@@ -13,14 +13,14 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' library(dplyr)
 #' github("https://github.com/hadley/vis-eda/blob/master/travel.R")
 #'
 #' # Same as above but provided to cat for easy viewing
 #' github("https://github.com/hadley/vis-eda/blob/master/travel.R") %>%
 #'   cat
 #'
-#'}
+#'
 
 
 github <- function(url) {

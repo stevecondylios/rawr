@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' library(dplyr)
 #' rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
 #'
 #' # Same as above but provided to cat for easy viewing
@@ -26,10 +26,11 @@
 #' domains <- c("https://github.com/hadley/vis-eda/blob/master/travel.R",
 #' "https://www.datacamp.com/community/tutorials/sentiment-analysis-R",
 #' "https://www.tidytextmining.com/sentiment.html",
-#' "https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
+#' "https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine",
+#' "https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 #'
 #' domains %>% sapply(rawr)
-#'}
+#'
 
 
 
@@ -47,7 +48,8 @@ rawr <- function(url) {
          "github"= { github(url) },
          "kaggle"= { kaggle(url) },
          "datacamp"= { datacamp(url) },
-         "tidytextmining"= { tidytext(url) }
+         "tidytextmining"= { tidytext(url) },
+         { blogdown(url) } # Default behaviour
   )
 
 }

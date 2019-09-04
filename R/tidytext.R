@@ -13,14 +13,14 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' library(dplyr)
 #' tidytext("https://www.tidytextmining.com/sentiment.html")
 #'
 #' # Same as above but provided to cat for easy viewing
 #' tidytext("https://www.tidytextmining.com/sentiment.html") %>%
 #'   cat
 #'
-#'}
+#'
 
 
 tidytext <- function(url) {

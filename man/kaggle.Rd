@@ -13,22 +13,24 @@ kaggle(url)
 Retrieve raw R code from a kaggle notebook
 }
 \examples{
-\dontrun{
+
+library(dplyr)
 kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-exploratory-analysis")
 kaggle("https://www.kaggle.com/adityaecdrid/mnist-with-keras-for-beginners-99457")
 
 # Same as above but provided to cat for easy viewing
-R
+
+# R
 kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")  \%>\%
   cat
 
-rmarkdown
+# rmarkdown
 kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-exploratory-analysis") \%>\%
   cat
 
-python
+# python
 kaggle("https://www.kaggle.com/adityaecdrid/mnist-with-keras-for-beginners-99457") \%>\%
   cat
-}
+
 }

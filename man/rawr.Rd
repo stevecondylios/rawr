@@ -13,7 +13,7 @@ rawr(url)
 Automatically identify website and retrieve raw R code from it
 }
 \examples{
-\dontrun{
+library(dplyr)
 rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
 
 # Same as above but provided to cat for easy viewing
@@ -26,8 +26,9 @@ rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") \%>\%
 domains <- c("https://github.com/hadley/vis-eda/blob/master/travel.R",
 "https://www.datacamp.com/community/tutorials/sentiment-analysis-R",
 "https://www.tidytextmining.com/sentiment.html",
-"https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
+"https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine",
+"https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 
 domains \%>\% sapply(rawr)
-}
+
 }
