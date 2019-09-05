@@ -7,6 +7,8 @@
 #'
 #' @param url Link to tidytext tutorial
 #'
+#' @return A character vector of length 1 containing the R code from the target url.
+#'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
 #'

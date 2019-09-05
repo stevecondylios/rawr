@@ -12,6 +12,9 @@ tidytextmining(url)
 \arguments{
 \item{url}{Link to tidytext tutorial}
 }
+\value{
+A character vector of length 1 containing the R code from the target url.
+}
 \description{
 Retrieve raw R code tidytext tutorial
 }

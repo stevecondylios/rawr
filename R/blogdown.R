@@ -7,6 +7,10 @@
 #'
 #' @param url Link to a blogdown web page
 #'
+#' @return A character vector of length 1 containing the R code from the target url.
+#'     Code from other languages (e.g. javascript, bash, or python) will also be returned if
+#'     present.
+#'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
 #'

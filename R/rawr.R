@@ -7,12 +7,17 @@
 #'
 #' @param url Link to an R file on supported website (github, kaggle, datacamp, tidytext)
 #'
+#' @return A character vector of length 1. rawr attempts to retrieve and return the raw R code it
+#'     finds at the target url. In the case of blogdown pages, all code will be returned (not just)
+#'     R code, and in the case of kaggle, all of R (R markdown) and Python code will be returned.
+#'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
 #'
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(dplyr)
 #' rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
 #'
@@ -30,7 +35,7 @@
 #' "https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 #'
 #' domains %>% sapply(rawr)
-#'
+#' }
 
 
 

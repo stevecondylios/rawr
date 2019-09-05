@@ -9,10 +9,14 @@ datacamp(url)
 \arguments{
 \item{url}{Link to datacamp tutorial}
 }
+\value{
+A character vector of length 1 containing the R code from the target url.
+}
 \description{
 Retrieve raw R code from a datacamp tutorial
 }
 \examples{
+\donttest{
 library(dplyr)
 datacamp("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
 datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning")
@@ -22,6 +26,6 @@ datacamp("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") \%
   cat
 datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning") \%>\%
   cat
-
+}
 
 }

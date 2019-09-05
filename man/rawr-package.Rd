@@ -8,9 +8,15 @@
 Retrieve Raw R Code from Popular Tutorials and Websites
 }
 \details{
-It has the goal of providing a very simple and easy way of quickly retrieving (just the)
-    raw R code from popular websites that display R code, including github, kaggle,
-    and data camp.
+It has the goal of providing a very simple way of quickly retrieving (just the)
+    raw R code from popular websites that display R code, including:
+\itemize{
+ \item{github  }{<https://github.com>}
+ \item{kaggle  }{<https://www.kaggle.com>}
+ \item{datacamp  }{<https://www.datacamp.com>, and,}
+ \item{R blogdown  }{<https://github.com/rstudio/blogdown>}
+}
+    thus enabling quick and easy code execution in the user's local environment.
 }
 \author{
 Steve Condylios \email{steve.condylios@gmail.com}

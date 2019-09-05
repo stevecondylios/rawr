@@ -9,6 +9,11 @@ blogdown(url)
 \arguments{
 \item{url}{Link to a blogdown web page}
 }
+\value{
+A character vector of length 1 containing the R code from the target url.
+    Code from other languages (e.g. javascript, bash, or python) will also be returned if
+    present.
+}
 \description{
 Retrieve raw R code from a blogdown web page
 }

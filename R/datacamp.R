@@ -7,12 +7,15 @@
 #'
 #' @param url Link to datacamp tutorial
 #'
+#' @return A character vector of length 1 containing the R code from the target url.
+#'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
 #'
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' library(dplyr)
 #' datacamp("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
 #' datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning")
@@ -22,7 +25,7 @@
 #'   cat
 #' datacamp("https://www.datacamp.com/community/tutorials/R-nlp-machine-learning") %>%
 #'   cat
-#'
+#' }
 #'
 
 

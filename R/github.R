@@ -7,6 +7,9 @@
 #'
 #' @param url Link to an R file on github website
 #'
+#' @return A character vector of length 1 containing the R code from the target url. All code
+#'    at the target url (including javascript, ruby, python) will be returned.
+#'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
 #'

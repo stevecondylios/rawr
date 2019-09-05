@@ -9,11 +9,15 @@ kaggle(url)
 \arguments{
 \item{url}{Link to a kaggle notebook}
 }
+\value{
+A character vector of length 1 containing the R code from the target url. Returned value
+   will contain rmarkdown or python code if that was the language used in the kaggle notebook.
+}
 \description{
 Retrieve raw R code from a kaggle notebook
 }
 \examples{
-
+\donttest{
 library(dplyr)
 kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-exploratory-analysis")
@@ -32,5 +36,5 @@ kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-explorato
 # python
 kaggle("https://www.kaggle.com/adityaecdrid/mnist-with-keras-for-beginners-99457") \%>\%
   cat
-
+}
 }

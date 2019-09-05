@@ -9,6 +9,10 @@ github(url)
 \arguments{
 \item{url}{Link to an R file on github website}
 }
+\value{
+A character vector of length 1 containing the R code from the target url. All code
+   at the target url (including javascript, ruby, python) will be returned.
+}
 \description{
 Retrieve raw R code from an .R file hosted on github website
 }

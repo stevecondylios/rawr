@@ -7,8 +7,9 @@ Maintainer: Steve Condylios <steve.condylios@gmail.com>
 BugReports: https://github.com/stevecondylios/rawr/issues
 License: MIT + file LICENSE
 URL: https://github.com/stevecondylios/rawr
-Description: Allows fast and simple retrieval of R code from
-    popular webpages, including kaggle and github.
+Description: Retrieves pure R code from popular R websites, including github <https://github.com>, 
+    kaggle <https://www.kaggle.com>, datacamp <https://www.datacamp.com>, 
+    and R blogs made using R blogdown <https://github.com/rstudio/blogdown>.
 Encoding: UTF-8
 LazyData: true
 Imports: rvest, dplyr, jsonlite, xml2

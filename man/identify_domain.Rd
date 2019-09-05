@@ -9,6 +9,9 @@ identify_domain(urls)
 \arguments{
 \item{urls}{Vector of urls}
 }
+\value{
+A character vector of length 1 containing the website domain.
+}
 \description{
 Identify the domain of the url
 }
