@@ -30,12 +30,19 @@ github <- function(url) {
 
   if(substr(url, 1, 4) != "http") { stop("Invalid url - must start with https or http") }
 
-  # Remove 'blob' from url
-  url %>% strsplit(., "/") %>% unlist %>% .[-6] %>% paste0(., collapse="/") %>%
+  # User may provide a github 'raw' or regular url
+  if(!grepl("githubusercontent", url)) {
+    # Remove 'blob' from url
+    url <- url %>% strsplit(., "/") %>% unlist %>% .[-6] %>% paste0(., collapse="/") %>%
 
-  # replace domain and read
-    sub("github.com", "raw.githubusercontent.com", .) %>%
-    read_html %>% html_text
+      # replace domain and read
+      sub("github.com", "raw.githubusercontent.com", .)
+  }
+
+  url %>%
+    readLines %>%
+    paste0(collapse="\n")
+
 
 }
 
