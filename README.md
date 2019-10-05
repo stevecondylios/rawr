@@ -48,6 +48,27 @@ rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 rawr("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/") %>% cat
 ```
 
+To automatically place output into a new file
+
+```R
+rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", to_file=T)
+```
+
+Or specify a file name
+
+```R
+rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", file_path="mynewfile.R")
+```
+
+If no result is returned, or if result is not sensible, try another method:
+
+```R
+"https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
+# no result
+
+https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr(method = 2) %>% cat 
+# returns correct output
+```
 
 ## Further Documentation and Examples
 
