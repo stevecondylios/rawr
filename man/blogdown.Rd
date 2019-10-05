@@ -4,10 +4,18 @@
 \alias{blogdown}
 \title{Retrieve raw R code from a blogdown web page}
 \usage{
-blogdown(url)
+blogdown(url, method, delimiter)
 }
 \arguments{
 \item{url}{Link to a blogdown web page}
+
+\item{method}{Not all websites are formatted consistently. To overcome this, try a different
+method by setting the method
+parameter to integers 2 and greater to try other available methods}
+
+\item{delimiter}{Specify what goes between the last character of one code block and the
+first character of the next code block. Default is a two new lines, which appears
+visually as one new line between blocks.}
 }
 \value{
 A character vector of length 1 containing the R code from the target url.

@@ -4,10 +4,23 @@
 \alias{rawr}
 \title{Automatically identify website and retrieve raw R code from it}
 \usage{
-rawr(url)
+rawr(url, to_file, file_path, method, delimiter)
 }
 \arguments{
 \item{url}{Link to an R file on supported website (github, kaggle, datacamp, tidytext)}
+
+\item{to_file}{Boolean to state whether to return output into a new file. Default is false.}
+
+\item{file_path}{Specifies a file path and file name. The default is to
+create a randomly named temp file (see ?tempfile for further information)}
+
+\item{method}{Not all websites are formatted consistently. To overcome this, rawr may have
+more than one method for any site. If what rawr returns is not sensible, try setting method
+parameter to integers 2 and greater to try other available methods}
+
+\item{delimiter}{Specify what goes between the last character of one code block and the
+first character of the next code block. Default is a two new lines, which appears
+visually as one new line between blocks.}
 }
 \value{
 A character vector of length 1. rawr attempts to retrieve and return the raw R code it
@@ -37,4 +50,9 @@ domains <- c("https://github.com/hadley/vis-eda/blob/master/travel.R",
 
 domains \%>\% sapply(rawr)
 }
+
+# When default method doesn't return a sensible result, try a different method
+
+
+
 }

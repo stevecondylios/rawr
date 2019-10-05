@@ -3,9 +3,18 @@
 #'
 #' @name rawr
 #'
-#' @usage rawr(url)
+#' @usage rawr(url, to_file, file_path, method, delimiter)
 #'
 #' @param url Link to an R file on supported website (github, kaggle, datacamp, tidytext)
+#' @param to_file Boolean to state whether to return output into a new file. Default is false.
+#' @param file_path Specifies a file path and file name. The default is to
+#'     create a randomly named temp file (see ?tempfile for further information)
+#' @param method Not all websites are formatted consistently. To overcome this, rawr may have
+#'     more than one method for any site. If what rawr returns is not sensible, try setting method
+#'     parameter to integers 2 and greater to try other available methods
+#' @param delimiter Specify what goes between the last character of one code block and the
+#'     first character of the next code block. Default is a two new lines, which appears
+#'     visually as one new line between blocks.
 #'
 #' @return A character vector of length 1. rawr attempts to retrieve and return the raw R code it
 #'     finds at the target url. In the case of blogdown pages, all code will be returned (not just)
@@ -35,11 +44,37 @@
 #' "https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 #'
 #' domains %>% sapply(rawr)
+#'
+#'  # When default method doesn't return a sensible result, try a different method
+#'
+#'  "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
+#'  # no result
+#'
+#' # Let's try another method
+#' "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>%
+#'    rawr(method = 2) %>%
+#'    cat # from inspection of output we see this method returns code correctly
+#'
+#' # Write output to a temp file
+#'   "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>% rawr(to_file = T)
+#'
+#' # Or to a new file (provide a file name)
+#' "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>%
+#'   rawr(to_file = T, file_path = "righthere.R")
+#'
+#'
+#'
+#'
 #' }
+#'
+#'
+#'
+#'
+#'
 
 
 
-rawr <- function(url) {
+rawr <- function(url, to_file = F, file_path, method = 1, delimiter = "\n\n") {
 
   if(substr(url, 1, 4) != "http") { stop("Invalid url - must start with https or http") }
 
@@ -49,13 +84,44 @@ rawr <- function(url) {
   if(length(domain) > 1) { stop("rawr::rawr only handles one url at a time,
                                 try sapply(your_urls, rawr::rawr)") }
 
-  switch(domain,
-         "github"= { github(url) },
-         "kaggle"= { kaggle(url) },
-         "datacamp"= { datacamp(url) },
-         "tidytextmining"= { tidytext(url) },
+  output <- switch(domain,
+         "github"= { github(url, method, delimiter) },
+         "kaggle"= { kaggle(url, method, delimiter) },
+         "datacamp"= { datacamp(url, method, delimiter) },
+         "tidytextmining"= { tidytext(url, method, delimiter) },
          { blogdown(url) } # Default behaviour
   )
+
+  # Logic:
+  # If file_path is provided, assume to_file is true, and write to location file_path
+  # If to_file is missing or false (default), print to console
+
+  if(!missing(file_path)) {
+    to_file = T
+  }
+
+  if(to_file) {
+
+    if(missing(file_path)) { file_path <-  tempfile() }
+    output %>% output_to_file(file_path)
+
+    # Provide a helpful message
+    if(file_path == T) {
+
+      temp <- if(grepl(tempdir(), file_path)) { T } else { F }
+
+      message_to_print <- paste0("Creating new ",
+                                 if(temp) { "temp " }, # Simply inserts 'temp' if it's a tempfile
+                                 "file: ",
+                                 file_path)
+      print(message_to_print)
+    } # end message
+
+  } else {
+
+    output
+
+  }
 
 }
 
