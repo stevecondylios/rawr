@@ -68,7 +68,7 @@ If `rawr()` returns no result (or if the result is non-sense), try another `meth
 "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
 # no result
 
-https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr(method = 2) %>% cat 
+"https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr(method = 2) %>% cat 
 # returns correct output
 ```
 
