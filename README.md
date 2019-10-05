@@ -1,3 +1,10 @@
+
+<!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/priceR)](https://cran.r-project.org/package=priceR)
+<!-- badges: end -->
+
 # Get Started Using rawr
 
 Websites containing R code sometimes necessitate tedious copy/pasting of code blocks from the website to your code editor in order for you to be able to run the code for yourself.
