@@ -2,7 +2,7 @@
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version/priceR)](https://cran.r-project.org/package=priceR)
+status](https://www.r-pkg.org/badges/version/rawr)](https://cran.r-project.org/package=rawr)
 <!-- badges: end -->
 
 # Get Started Using rawr
