@@ -62,7 +62,7 @@ Send output to a specific file
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", file_path="mynewfile.R")
 ```
 
-If `rawr()` doens't return a result, or returns a non-sense result, try another method:
+If `rawr()` returns no result (or if the result is non-sense), try another `method`
 
 ```R
 "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
