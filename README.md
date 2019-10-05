@@ -48,7 +48,7 @@ rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 rawr("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/") %>% cat
 ```
 
-###Advanced use
+### Advanced use
 
 To automatically place output into a new file
 
