@@ -3,6 +3,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rawr)](https://cran.r-project.org/package=rawr)
+[![Travis build status](https://travis-ci.org/stevecondylios/rawr.svg?branch=master)](https://travis-ci.org/stevecondylios/rawr)
 <!-- badges: end -->
 
 # Get Started Using rawr
