@@ -1,4 +1,4 @@
-#' Automatically identify website and retrieve raw R code from it
+#' Retrieve raw R code from any github, kaggle, stack overflow, blogdown, or data camp web page
 #'
 #'
 #' @name rawr
