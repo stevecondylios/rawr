@@ -1,11 +1,11 @@
-#' Retrieve raw R code from a blogdown web page
+#' Retrieve raw R code from Stack Overflow website
 #'
 #'
-#' @name blogdown
+#' @name stackoverflow
 #'
-#' @usage blogdown(url, method, padding)
+#' @usage stackoverflow(url, method, padding)
 #'
-#' @param url Link to a blogdown web page
+#' @param url Link to a page on Stack Overflow website (or any Stack Exchange)
 #' @param method Not all websites are formatted consistently. To overcome this, try a different
 #'     method by setting the method
 #'     parameter to integers 2 and greater to try other available methods
@@ -13,9 +13,8 @@
 #'     first character of the next code block. Default is a two new lines, which appears
 #'     visually as one new line between code blocks.
 #'
-#' @return A character vector of length 1 containing the R code from the target url.
-#'     Code from other languages (e.g. javascript, bash, or python) will also be returned if
-#'     present.
+#' @return A character vector of length 1 containing the R code from the target url. All code
+#'    at the target url (including javascript, ruby, python) will be returned.
 #'
 #' @import dplyr jsonlite xml2
 #' @importFrom rvest html_nodes html_text html_attr
@@ -25,18 +24,22 @@
 #'
 #' @examples
 #' library(dplyr)
-#' blogdown("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
+#' stackoverflow("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny")
 #'
 #' # Same as above but provided to cat for easy viewing
-#' blogdown("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")  %>%
+#' stackoverflow("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny") %>%
 #'   cat
+#'
 #'
 
 
-blogdown <- function(url, method, padding = "\n\n") {
+stackoverflow <- function(url, method, padding = "\n\n") {
+
   url %>% xml2::read_html(.) %>%
     html_nodes("code") %>% html_text %>% paste0(collapse=padding)
+
 }
+
 
 
 
