@@ -68,7 +68,9 @@ medium <- function(url, method = 1, padding = "\n\n") {
   #   strsplit(".js") %>%
   #   .[[1]] %>% .[1] %>% read_html %>% html_text
 
-
+  # Note: how to extract >1 type of elements but retain the order (link over two lines)
+  # https://stackoverflow.com/questions/58465175/extract-more-than-one-type-of-element-
+  # whilst-preserving-order-using-rvest-or-si/58467172#58467172
 
 
 }
