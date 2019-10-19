@@ -9,13 +9,13 @@
 #'
 #' @return A character vector of length 1 containing url for the raw version of the github gist
 #'
-#' @import dplyr jsonlite xml2
+#' @import dplyr jsonlite xml2 stringr
 #' @importFrom rvest html_nodes html_text html_attr
 #'
 #' @export
 #'
 #' @examples
-#' library(dplyr)
+#'
 #' gist_url_to_raw("https://gist.github.com/korkridake/ea96f6569f5a4f9a1a552145e6151235")
 #'
 

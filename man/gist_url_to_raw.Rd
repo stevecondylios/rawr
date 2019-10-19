@@ -16,7 +16,7 @@ A character vector of length 1 containing url for the raw version of the github 
 Convert github gist url into equilvalent url for raw code
 }
 \examples{
-library(dplyr)
+
 gist_url_to_raw("https://gist.github.com/korkridake/ea96f6569f5a4f9a1a552145e6151235")
 
 }

@@ -45,7 +45,7 @@ medium <- function(url, method = 1, padding = "\n\n") {
   # Loop necessary as read_html doesn't play nice with sapply
   # See: https://github.com/r-lib/xml2/issues/15
   output <- c()
-  for(i in 1:length(a)) {
+  for(i in 1:length(temp)) {
     output[i] <- temp[i] %>% read_html %>% html_text %>% paste0(padding)
     output[i]
     }
