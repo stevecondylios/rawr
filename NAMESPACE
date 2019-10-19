@@ -2,9 +2,11 @@
 
 export(blogdown)
 export(datacamp)
+export(gist_url_to_raw)
 export(github)
 export(identify_domain)
 export(kaggle)
+export(medium)
 export(output_to_file)
 export(rawr)
 export(stackoverflow)

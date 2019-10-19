@@ -2,7 +2,7 @@
 % Please edit documentation in R/rawr.R
 \name{rawr}
 \alias{rawr}
-\title{Automatically identify website and retrieve raw R code from it}
+\title{Retrieve raw R code from any github, kaggle, stack overflow, blogdown, or data camp web page}
 \usage{
 rawr(url, to_file, file_path, method, padding)
 }
@@ -28,7 +28,7 @@ A character vector of length 1. rawr attempts to retrieve and return the raw R c
     R code, and in the case of kaggle, all of R (R markdown) and Python code will be returned.
 }
 \description{
-Automatically identify website and retrieve raw R code from it
+Retrieve raw R code from any github, kaggle, stack overflow, blogdown, or data camp web page
 }
 \examples{
 \donttest{

@@ -90,6 +90,7 @@ rawr <- function(url, to_file = F, file_path, method = 1, padding = "\n\n") {
          "datacamp"= { datacamp(url, method, padding) },
          "tidytextmining"= { tidytext(url, method, padding) },
          "stackoverflow" = { stackoverflow(url, method, padding) },
+         "medium" = { medium(url, method, padding) },
          { blogdown(url) } # Default behaviour
   )
 
