@@ -91,6 +91,7 @@ rawr <- function(url, to_file = F, file_path, method = 1, padding = "\n\n") {
          "tidytextmining"= { tidytext(url, method, padding) },
          "stackoverflow" = { stackoverflow(url, method, padding) },
          "medium" = { medium(url, method, padding) },
+         "r-bloggers" = { r_bloggers(url, method, padding) },
          { blogdown(url) } # Default behaviour
   )
 
