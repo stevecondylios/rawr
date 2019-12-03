@@ -16,7 +16,7 @@
 #' @return A character vector of length 1 containing the R code from the target url. All code
 #'    at the target url (including javascript, ruby, python) will be returned.
 #'
-#' @import dplyr jsonlite xml2
+#' @import dplyr jsonlite xml2 stringr
 #' @importFrom rvest html_nodes html_text html_attr
 #' @importFrom utils file.edit
 #'
@@ -37,20 +37,27 @@ medium <- function(url, method = 1, padding = "\n\n") {
   }
 
 
-  if(method == 1) {
-  # url <-"https://medium.com/@data_datum/ggplot2-or-how-to-make-fancy-graphics-with-r-fabae7fc16d4"
-  page_html <- url %>% read_html %>% html_nodes(make_class("lh li lj lk ll gp dy lm"))
-  temp <- page_html %>% as.character %>%  str_replace_all("<br>|<br/>", "&#10;")
 
-  # Loop necessary as read_html doesn't play nice with sapply
-  # See: https://github.com/r-lib/xml2/issues/15
-  output <- c()
-  for(i in 1:length(temp)) {
-    output[i] <- temp[i] %>% read_html %>% html_text %>% paste0(padding)
-    output[i]
-    }
-  output
-  } # End method 1
+  # url <-"https://medium.com/@data_datum/ggplot2-or-how-to-make-fancy-graphics-with-r-fabae7fc16d4"
+  # page_html <- url %>% read_html %>% html_nodes(make_class("gn go co at hy b bl hz ia r ib"))
+  # temp <- page_html %>% as.character %>%  str_replace_all("<br>|<br/>", "&#10;")
+  #
+  # # Loop necessary as read_html doesn't play nice with sapply
+  # # See: https://github.com/r-lib/xml2/issues/15
+  # output <- c()
+  # for(i in 1:length(temp)) {
+  #   output[i] <- temp[i] %>% read_html %>% html_text %>% paste0(padding)
+  #   output[i]
+  #   }
+  # output
+
+  output <- url %>% read_html %>% html_nodes("pre") %>% html_text %>% paste0(collapse = padding)
+
+
+
+
+
+
 
 
   ## Placeholder for towards data science
