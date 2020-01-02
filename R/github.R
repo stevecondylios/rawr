@@ -37,6 +37,25 @@ github <- function(url, method, padding = "\n\n") {
 
   if(substr(url, 1, 4) != "http") { stop("Invalid url - must start with https or http") }
 
+
+  # .md files on github have the .md extension, but the contents of README.md is also
+  # displayed at the repository root, e.g. https://github.com/stevecondylios/rawr
+  # So we should scan for these special cases and treat appropriately
+
+  # test_one <- "https://github.com/stevecondylios/rawr"
+  # test_two <- "https://github.com/stevecondylios/rawr/"
+  # test_three <- "https://github.com/stevecondylios/rawr"
+
+  # Github repository names can have letters, numbers, -, _ and .
+  # https://stackoverflow.com/a/59082561
+
+  # Logic: if we see https://github.com/REGEX/REGEX$ (note the end of string), then
+  # we consider it a README and parse accordingly
+
+  # Check by looking for (github.com/./.$)
+  # if(grepl("github.com/*/[[:alnum:]]", url))
+
+
   # User may provide a github 'raw' or regular url
   if(!grepl("githubusercontent", url)) {
     # Remove 'blob' from url
