@@ -44,7 +44,7 @@ github <- function(url, method, padding = "\n\n") {
 
   # test_one <- "https://github.com/stevecondylios/rawr"
   # test_two <- "https://github.com/stevecondylios/rawr/"
-  # test_three <- "https://github.com/stevecondylios/rawr"
+  # test_three <- "https://github.com/stevecondylios/rawr/R/blogdown.R"
 
   # Github repository names can have letters, numbers, -, _ and .
   # https://stackoverflow.com/a/59082561
@@ -55,6 +55,18 @@ github <- function(url, method, padding = "\n\n") {
   # Check by looking for (github.com/./.$)
   # if(grepl("github.com/*/[[:alnum:]]", url))
 
+  # Simple logic: if the url has a file extension, parse it as R / Rmd code,
+  # otherise assume it's a README
+
+  is_readme <- function(url) {
+    url %>% str_split("github\\.com") %>% .[[1]] %>% .[2] %>%
+      str_split("\\.") %>% .[[1]] %>% {length(.) == 1 }
+  }
+
+  # Tests
+  # is_readme(test_one)
+  # is_readme(test_two)
+  # is_readme(test_three)
 
   # User may provide a github 'raw' or regular url
   if(!grepl("githubusercontent", url)) {
@@ -65,10 +77,19 @@ github <- function(url, method, padding = "\n\n") {
       sub("github.com", "raw.githubusercontent.com", .)
   }
 
-  url %>%
-    readLines %>%
-    paste0(collapse=padding)
+  if(!is_readme(url)) {
+    output <- url %>%
+      readLines %>%
+      paste0(collapse=padding)
+  }
 
+  if(is_readme(url)) {
+    print("Include code to parse README.md")
+    # output <- url %>% read_html %>%  etc
+  }
+
+
+  output
 
 }
 
