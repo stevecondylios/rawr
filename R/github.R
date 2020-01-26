@@ -32,7 +32,6 @@
 #'
 #'
 
-
 github <- function(url, method, padding = "\n\n") {
 
   if(substr(url, 1, 4) != "http") { stop("Invalid url - must start with https or http") }
@@ -85,7 +84,7 @@ github <- function(url, method, padding = "\n\n") {
 
   if(is_readme(url)) {
     print("Include code to parse README.md")
-    url %>% read_html %>%
+    output <- url %>% read_html %>%
       html_nodes("div.highlight.highlight-source-r") %>%
       html_text %>% paste0(collapse=padding)
 
