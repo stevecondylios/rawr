@@ -85,7 +85,10 @@ github <- function(url, method, padding = "\n\n") {
 
   if(is_readme(url)) {
     print("Include code to parse README.md")
-    # output <- url %>% read_html %>%  etc
+    url %>% read_html %>%
+      html_nodes("div.highlight.highlight-source-r") %>%
+      html_text %>% paste0(collapse=padding)
+
   }
 
 

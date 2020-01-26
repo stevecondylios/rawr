@@ -4,3 +4,4 @@ CONTRIBUTIONS.md
 README.md
 tests/data/
 ^\.travis\.yml$
+TEMP
