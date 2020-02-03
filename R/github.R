@@ -41,9 +41,6 @@ github <- function(url, method, padding = "\n\n") {
   # displayed at the repository root, e.g. https://github.com/stevecondylios/rawr
   # So we should scan for these special cases and treat appropriately
 
-  # test_one <- "https://github.com/stevecondylios/rawr"
-  # test_two <- "https://github.com/stevecondylios/rawr/"
-  # test_three <- "https://github.com/stevecondylios/rawr/R/blogdown.R"
 
   # Github repository names can have letters, numbers, -, _ and .
   # https://stackoverflow.com/a/59082561
@@ -58,17 +55,30 @@ github <- function(url, method, padding = "\n\n") {
   # otherise assume it's a README
 
   is_readme <- function(url) {
+
+    # If url contains raw.githubusercontent.com, it's not a readme
+    if(grepl("githubusercontent", url)) {
+      return(FALSE)
+      }
+
+    # Checks what's after github.com in the url, if nothing, it's a readme
     url %>% str_split("github\\.com") %>% .[[1]] %>% .[2] %>%
-      str_split("\\.") %>% .[[1]] %>% {length(.) == 1 }
+      str_split("\\.") %>% .[[1]] %>% { length(.) == 1 }
+
   }
 
-  # Tests
-  # is_readme(test_one)
-  # is_readme(test_two)
-  # is_readme(test_three)
+  # url <- "https://github.com/stevecondylios/rawr" # test 1
+  # url <- "https://github.com/stevecondylios/rawr/" # test 2
+  # url <- "https://github.com/stevecondylios/rawr/R/blogdown.R" # test 3
+  # is_readme(url)
 
-  # User may provide a github 'raw' or regular url
-  if(!grepl("githubusercontent", url)) {
+  url_is_a_readme <- is_readme(url)
+
+  # User may provide a github 'raw' or regular url, this block converts the url to
+  # one containing raw.githubusercontent.com if it doesn't already
+
+  if(!grepl("githubusercontent", url) & !url_is_a_readme) {
+
     # Remove 'blob' from url
     url <- url %>% strsplit(., "/") %>% unlist %>% .[-6] %>% paste0(collapse="/") %>%
 
@@ -76,14 +86,14 @@ github <- function(url, method, padding = "\n\n") {
       sub("github.com", "raw.githubusercontent.com", .)
   }
 
-  if(!is_readme(url)) {
+  if(!url_is_a_readme) {
     output <- url %>%
       readLines %>%
       paste0(collapse=padding)
   }
 
-  if(is_readme(url)) {
-    print("Include code to parse README.md")
+  if(url_is_a_readme) {
+    # print("Include code to parse README.md")
     output <- url %>% read_html %>%
       html_nodes("div.highlight.highlight-source-r") %>%
       html_text %>% paste0(collapse=padding)
