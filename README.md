@@ -18,6 +18,7 @@ able to run the code for yourself.
 To get the code from a kaggle notebook:
 
 ``` r
+# install.packages("rawr")
 library(rawr)
 code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 

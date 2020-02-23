@@ -22,6 +22,7 @@ Websites containing R code sometimes necessitate tedious copy/pasting of code bl
 To get the code from a kaggle notebook:
 
 ```R
+# install.packages("rawr")
 library(rawr)
 code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 
