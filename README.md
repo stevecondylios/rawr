@@ -1,5 +1,5 @@
 
-# rawr <a href='https://github.com/stevecondylios/rawr'><img src='man/figures/RAWR_dark.png' align="right" height="139" /></a>
+# rawr <a href='https://github.com/stevecondylios/rawr'><img src='man/figures/rawr.png' align="right" height="139" /></a>
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rawr)](https://cran.r-project.org/package=rawr)
