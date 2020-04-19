@@ -49,6 +49,20 @@ sticker(
 );system("open man/figures/rawr.png")
 
 
+# ### Convert to svg
+# # From: https://stackoverflow.com/questions/61300636/convert-png-to-svg-in-r
+# library(magick)
+# my_image <- image_read("man/figures/rawr.png")
+# my_svg <- image_convert(my_image, format="svg")
+# image_write(my_svg, "man/figures/rawr.svg")
+#
+# ?image_convert
+#
+
+
+
+
+
 
 
 
