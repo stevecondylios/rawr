@@ -61,11 +61,12 @@ domains \%>\% sapply(rawr)
    cat # from inspection of output we see this method returns code correctly
 
 # Write output to a temp file
-  "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" \%>\% rawr(to_file = T)
+  "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" \%>\%
+    rawr(to_file = TRUE)
 
 # Or to a new file (provide a file name)
 "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" \%>\%
-  rawr(to_file = T, file_path = "yourfile.R")
+  rawr(to_file = TRUE, file_path = "yourfile.R")
 
 
 
