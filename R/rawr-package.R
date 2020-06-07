@@ -1,4 +1,4 @@
-#' Retrieve Raw R Code from Popular Tutorials and Websites
+#'
 #' @docType package
 #'
 #' @details It has the goal of providing a very simple way of quickly retrieving (just the)
@@ -17,6 +17,9 @@
 #'
 #'
 #' @name rawr-package
+#'
+#'
+#' @description Retrieve Raw R Code from Popular Tutorials and Websites
 #'
 # NULL
 

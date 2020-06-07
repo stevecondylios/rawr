@@ -17,38 +17,36 @@ Websites containing R code sometimes necessitate tedious copy/pasting of code bl
 
 `rawr` takes care of this.  
 
-### Get R Code from a Kaggle Notebook
+### Get R Code from Popular R websites
 
-To get the code from a kaggle notebook:
+To get the code from a website to your clipboard, use `rawr_to_clip()`, like in these examples:
 
 ```R
 # install.packages("rawr")
 library(rawr)
-code <- rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 
-# View code easily
-cat(code)
+# CRAN vignettes
+rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/topic_modeling.html")
+
+# Stack Overflow
+rawr_to_clip("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny")
+
+# Kaggle
+rawr_to_clip("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
+
+# Datacamp
+rawr_to_clip("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
+
+# Github 
+rawr_to_clip("https://github.com/hadley/vis-eda/blob/master/travel.R")
+
+# Blogdown sites
+rawr_to_clip("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
+
 ``` 
 
 
 ### More Examples
-
-[Here](https://www.tidytextmining.com/sentiment.html)'s a great tutorial. 
-
-What if you want to run the R code yourself? Easy!
-
-```R
-library(rawr)
-
-code <- rawr("https://www.tidytextmining.com/sentiment.html") 
-```
-
-The output is a little hard to read though! That's easily solved
-
-```R
-code %>% cat
-```
-
 
 `rawr` currently supports github, kaggle, datacamp, and many blogdown sites. Try it
 
@@ -62,21 +60,22 @@ rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 rawr("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/") %>% cat
 ```
 
-### Advanced use
+### Other use
 
-Send output to a temp file
+Write output to a temp file
 
 ```R
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", to_file=T)
 ```
 
-Send output to a specific file
+Write output to a specific file
 
 ```R
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", file_path="mynewfile.R")
 ```
 
-If `rawr()` returns no result (or if the result is non-sense), try another `method`
+Some sites have > 1 way of identifying R coode. If `rawr()` returns no result 
+(or if the result is non-sense), try another `method`
 
 ```R
 "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
@@ -84,18 +83,6 @@ If `rawr()` returns no result (or if the result is non-sense), try another `meth
 
 "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr(method = 2) %>% cat 
 # returns correct output
-```
-
-## Further Documentation and Examples
-
-See:
-
-```R
-?rawr::rawr
-?rawr::datacamp
-?rawr::github
-?rawr::kaggle
-?rawr::tidytext
 ```
 
 
@@ -119,7 +106,7 @@ For feature requests, raise an issue with the following:
 
 # Pull Requests
 
-Pull requests are welcomed. 
+Pull requests are welcomed. Before doing so, please create an issue or email me with your idea.  
 
 Any new functions should follow the conventions established by the the package's existing functions. Please ensure
 

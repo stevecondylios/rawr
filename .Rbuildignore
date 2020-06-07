@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 CONTRIBUTIONS.md
+README.Rmd
 README.md
 tests/data/
 ^\.travis\.yml$

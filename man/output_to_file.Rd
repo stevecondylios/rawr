@@ -17,7 +17,7 @@ Open contents in a new tempfile or file
 \examples{
 
 \dontrun{
-code_sample <- "#Sample code\\nx <- 6\\n2 * 2"
+code_sample <- "#Sample code\nx <- 6\n2 * 2"
 output_to_file(code_sample)
 }
 
