@@ -13,10 +13,10 @@ able to run the code for yourself.
 
 `rawr` takes care of this.
 
-### Get R Code from Popular R websites
+### R Code from Popular R websites
 
-To get the code from a website to your clipboard, use `rawr_to_clip()`,
-like in these examples:
+Retrieve R code from a website to your clipboard with `rawr_to_clip()`,
+here are some examples:
 
 ``` r
 # install.packages("rawr")
@@ -41,22 +41,7 @@ rawr_to_clip("https://github.com/hadley/vis-eda/blob/master/travel.R")
 rawr_to_clip("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 ```
 
-### More Examples
-
-`rawr` currently supports github, kaggle, datacamp, and many blogdown
-sites. Try it
-
-``` r
-library(rawr)
-library(dplyr)
-
-rawr("https://www.datacamp.com/community/tutorials/sentiment-analysis-R") %>% cat
-rawr("https://github.com/hadley/vis-eda/blob/master/travel.R") %>% cat
-rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine") %>% cat
-rawr("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/") %>% cat
-```
-
-### Other use
+### Other functionality
 
 Write output to a temp file
 
