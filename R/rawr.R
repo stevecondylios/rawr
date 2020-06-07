@@ -60,7 +60,7 @@
 #'
 #' # Or to a new file (provide a file name)
 #' "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>%
-#'   rawr(to_file = T, file_path = "yourfile.R")
+#'   rawr(to_file = TRUE, file_path = "yourfile.R")
 #'
 #'
 #'
@@ -100,7 +100,7 @@ rawr <- function(url, to_file = F, file_path, method = 1, padding = "\n\n") {
   # If to_file is missing or false (default), print to console
 
   if(!missing(file_path)) {
-    to_file = T
+    to_file = TRUE
   }
 
   if(to_file) {
@@ -109,9 +109,9 @@ rawr <- function(url, to_file = F, file_path, method = 1, padding = "\n\n") {
     output %>% output_to_file(file_path)
 
     # Provide a helpful message
-    if(file_path == T) {
+    if(file_path == TRUE) {
 
-      temp <- if(grepl(tempdir(), file_path)) { T } else { F }
+      temp <- if(grepl(tempdir(), file_path)) { TRUE } else { FALSE }
 
       message_to_print <- paste0("Creating new ",
                                  if(temp) { "temp " }, # Simply inserts 'temp' if it's a tempfile
