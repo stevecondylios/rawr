@@ -24,7 +24,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'
 #' library(dplyr)
 #' rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/topic_modeling.html")

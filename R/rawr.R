@@ -63,14 +63,7 @@
 #' "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>%
 #'   rawr(to_file = TRUE, file_path = "yourfile.R")
 #'
-#'
-#'
-#'
 #' }
-#'
-#'
-#'
-#'
 #'
 
 
