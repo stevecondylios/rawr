@@ -39,7 +39,7 @@
 
 rawr_to_clip <- function(url, method = 1, padding = "\n\n") {
 
-  url %>% rawr %>% write_clip(., )
+  url %>% rawr %>% write_clip(., allow_non_interactive = TRUE)
 
 }
 

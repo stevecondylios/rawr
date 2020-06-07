@@ -31,7 +31,7 @@ A character vector of length 1. rawr attempts to retrieve and return the raw R c
 Retrieve raw R code from any github, kaggle, stack overflow, blogdown, or data camp web page
 }
 \examples{
-\donttest{
+\dontrun{
 library(dplyr)
 rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
 
