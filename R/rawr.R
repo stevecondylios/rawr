@@ -26,7 +26,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(dplyr)
 #' rawr("https://github.com/hadley/vis-eda/blob/master/travel.R")
 #'
