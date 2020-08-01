@@ -6,3 +6,6 @@ README.md
 tests/data/
 ^\.travis\.yml$
 TEMP
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
