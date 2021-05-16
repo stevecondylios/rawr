@@ -8,7 +8,7 @@ BugReports: https://github.com/stevecondylios/rawr/issues
 License: MIT + file LICENSE
 URL: https://github.com/stevecondylios/rawr
 Description: Retrieves pure R code from popular R websites, including github <https://github.com>, 
-    kaggle <https://www.kaggle.com>, datacamp <https://www.datacamp.com>, 
+    kaggle <https://www.kaggle.com>, 
     and R blogs made using R blogdown <https://github.com/rstudio/blogdown>.
 Encoding: UTF-8
 LazyData: true

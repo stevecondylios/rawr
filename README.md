@@ -29,9 +29,6 @@ rawr_to_clip("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny
 # Kaggle
 rawr_to_clip("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 
-# Datacamp
-rawr_to_clip("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
-
 # GitHub 
 rawr_to_clip("https://github.com/hadley/vis-eda/blob/master/travel.R")
 
@@ -54,17 +51,6 @@ Write output to a specific file
 
 ``` r
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", file_path="mynewfile.R")
-```
-
-Some sites have &gt; 1 way of identifying R coode. If `rawr()` returns
-no result (or if the result is non-sense), try another `method`
-
-``` r
-"https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
-# no result
-
-"https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr(method = 2) %>% cat 
-# returns correct output
 ```
 
 # Issues and Feature Requests

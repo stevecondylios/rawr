@@ -5,7 +5,7 @@
 #'
 #' @usage rawr(url, to_file, file_path, method, padding)
 #'
-#' @param url Link to an R file on supported website (github, kaggle, datacamp, tidytext)
+#' @param url Link to an R file on supported website (github, kaggle, tidytext)
 #' @param to_file Boolean to state whether to return output into a new file. Default is false.
 #' @param file_path Specifies a file path and file name. The default is to
 #'     create a randomly named temp file (see ?tempfile for further information)
@@ -38,29 +38,18 @@
 #' # Use on multiple urls
 #'
 #' domains <- c("https://github.com/hadley/vis-eda/blob/master/travel.R",
-#' "https://www.datacamp.com/community/tutorials/sentiment-analysis-R",
 #' "https://www.tidytextmining.com/sentiment.html",
 #' "https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine",
 #' "https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 #'
 #' domains %>% sapply(rawr)
 #'
-#'  # When default method doesn't return a sensible result, try a different method
-#'
-#'  "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
-#'  # no result
-#'
-#' # Let's try another method
-#' "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>%
-#'    rawr(method = 2) %>%
-#'    cat # from inspection of output we see this method returns code correctly
-#'
 #' # Write output to a temp file
-#'   "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>%
+#'   "https://www.tidytextmining.com/sentiment.html" %>%
 #'     rawr(to_file = TRUE)
 #'
 #' # Or to a new file (provide a file name)
-#' "https://www.datacamp.com/community/tutorials/R-nlp-machine-learning" %>%
+#' "https://www.tidytextmining.com/sentiment.html" %>%
 #'   rawr(to_file = TRUE, file_path = "yourfile.R")
 #'
 #' }
@@ -81,7 +70,7 @@ rawr <- function(url, to_file = F, file_path, method = 1, padding = "\n\n") {
   output <- switch(domain,
          "github"= { github(url, method, padding) },
          "kaggle"= { kaggle(url, method, padding) },
-         "datacamp"= { datacamp(url, method, padding) },
+         # "datacamp"= { datacamp(url, method, padding) },
          "tidytextmining"= { tidytext(url, method, padding) },
          "stackoverflow" = { stackoverflow(url, method, padding) },
          "medium" = { medium(url, method, padding) },
