@@ -33,7 +33,7 @@ identify_domain <- function(urls) {
     vec %>% unlist %>% {. != "" } %>% { vec[.] }
   }
 
-  # We want the 'thing' after either https://, http://, https://www., http://www.
+  # We want what's after either https://, http://, https://www., http://www.
   # urls %>% str_split(., "https://")
 
   urls %>%
