@@ -32,5 +32,10 @@ github("https://github.com/hadley/vis-eda/blob/master/travel.R")
 github("https://github.com/hadley/vis-eda/blob/master/travel.R") \%>\%
   cat
 
+# A jupyter/ipython notebook
+
+constructed_url <- paste0("https://github.com/tulip-lab/sit742/blob/",
+  "master/Jupyter/SIT742P11A-MLlib-Supervised.ipynb")
+github(constructed_url)
 
 }

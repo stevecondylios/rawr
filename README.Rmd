@@ -13,9 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 [![Travis build status](https://travis-ci.org/stevecondylios/rawr.svg?branch=master)](https://travis-ci.org/stevecondylios/rawr)
 <!-- badges: end -->
 
-Websites containing R code sometimes necessitate tedious copy/pasting of code blocks from the website to your code editor in order for you to be able to run the code for yourself.
-
-`rawr` takes care of this.  
+`rawr` helps you quickly grab R code from the web, either straight to an R file, or to your clipboard. This avoids tedious copy/pasting of code from browser to IDE.
 
 ### R Code from Popular R websites
 
@@ -37,8 +35,11 @@ rawr_to_clip("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-i
 # Datacamp
 rawr_to_clip("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
 
-# Github 
+# GitHub 
 rawr_to_clip("https://github.com/hadley/vis-eda/blob/master/travel.R")
+
+# Jupyter Notebook on GitHub
+rawr_to_clip("https://github.com/tulip-lab/sit742/blob/master/Jupyter/SIT742P10B-MLSystem.ipynb")
 
 # Blogdown sites
 rawr_to_clip("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")

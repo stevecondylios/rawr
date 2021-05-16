@@ -7,11 +7,9 @@ status](https://www.r-pkg.org/badges/version/rawr)](https://cran.r-project.org/p
 status](https://travis-ci.org/stevecondylios/rawr.svg?branch=master)](https://travis-ci.org/stevecondylios/rawr)
 <!-- badges: end -->
 
-Websites containing R code sometimes necessitate tedious copy/pasting of
-code blocks from the website to your code editor in order for you to be
-able to run the code for yourself.
-
-`rawr` takes care of this.
+`rawr` helps you quickly grab R code from the web, either straight to an
+R file, or to your clipboard. This avoids tedious copy/pasting of code
+from browser to IDE.
 
 ### R Code from Popular R websites
 
@@ -34,8 +32,11 @@ rawr_to_clip("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-i
 # Datacamp
 rawr_to_clip("https://www.datacamp.com/community/tutorials/sentiment-analysis-R")
 
-# Github 
+# GitHub 
 rawr_to_clip("https://github.com/hadley/vis-eda/blob/master/travel.R")
+
+# Jupyter Notebook on GitHub
+rawr_to_clip("https://github.com/tulip-lab/sit742/blob/master/Jupyter/SIT742P10B-MLSystem.ipynb")
 
 # Blogdown sites
 rawr_to_clip("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
@@ -55,8 +56,8 @@ Write output to a specific file
 rawr("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine", file_path="mynewfile.R")
 ```
 
-Some sites have \> 1 way of identifying R coode. If `rawr()` returns no
-result (or if the result is non-sense), try another `method`
+Some sites have &gt; 1 way of identifying R coode. If `rawr()` returns
+no result (or if the result is non-sense), try another `method`
 
 ``` r
 "https://www.datacamp.com/community/tutorials/keras-r-deep-learning" %>% rawr %>% cat
@@ -70,15 +71,15 @@ result (or if the result is non-sense), try another `method`
 
 When reporting an issue, please include:
 
-  - Example code that reproduces the **observed** behavior.
-  - An explanation of what the **expected** behavior is.
-  - A specific url you’re attempting to retrieve R code from (if that’s
+-   Example code that reproduces the **observed** behavior.
+-   An explanation of what the **expected** behavior is.
+-   A specific url you’re attempting to retrieve R code from (if that’s
     what your issue concerns)
 
 For feature requests, raise an issue with the following:
 
-  - The desired functionality
-  - Example inputs and desired output
+-   The desired functionality
+-   Example inputs and desired output
 
 # Pull Requests
 
@@ -88,6 +89,6 @@ email me with your idea.
 Any new functions should follow the conventions established by the the
 package’s existing functions. Please ensure
 
-  - Functions are sensibly named
-  - The **intent** of the contribution is clear
-  - At least one example is provided in the documentation
+-   Functions are sensibly named
+-   The **intent** of the contribution is clear
+-   At least one example is provided in the documentation
