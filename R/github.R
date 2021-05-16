@@ -30,6 +30,11 @@
 #' github("https://github.com/hadley/vis-eda/blob/master/travel.R") %>%
 #'   cat
 #'
+#' # A jupyter/ipython notebook
+#'
+#' constructed_url <- paste0("https://github.com/tulip-lab/sit742/blob/",
+#'   "master/Jupyter/SIT742P11A-MLlib-Supervised.ipynb")
+#' github(constructed_url)
 #'
 
 github <- function(url, method, padding = "\n\n") {
@@ -70,6 +75,8 @@ github <- function(url, method, padding = "\n\n") {
   # url <- "https://github.com/stevecondylios/rawr" # test 1
   # url <- "https://github.com/stevecondylios/rawr/" # test 2
   # url <- "https://github.com/stevecondylios/rawr/R/blogdown.R" # test 3
+  # url <- "https://github.com/tulip-lab/sit742/blob/master/Jupyter/SIT742P10B-MLSystem.ipynb"  # Jupyter test 1
+  # url <- "https://github.com/tulip-lab/sit742/blob/master/Jupyter/SIT742P11A-MLlib-Supervised.ipynb"  # Jupyter test 2
   # is_readme(url)
 
   url_is_a_readme <- is_readme(url)
@@ -87,13 +94,28 @@ github <- function(url, method, padding = "\n\n") {
   }
 
   if(!url_is_a_readme) {
+
+    # Special case where github page is a jupyter/ipython notebook
+    if(substr(url, nchar(url)-5, nchar(url)) == ".ipynb"){
+
+      temp <- fromJSON(url)
+
+      output <- temp[[1]] %>%
+        filter(.data$cell_type == "code") %>%
+        pull(source) %>%
+        lapply(function(x) { paste0(x, collapse="") }) %>%
+        paste0(collapse=padding)
+
+      return(output)
+    }
+
     output <- url %>%
       readLines %>%
       paste0(collapse=padding)
   }
 
   if(url_is_a_readme) {
-    # print("Include code to parse README.md")
+
     output <- url %>% read_html %>%
       html_nodes("div.highlight.highlight-source-r") %>%
       html_text %>% paste0(collapse=padding)
