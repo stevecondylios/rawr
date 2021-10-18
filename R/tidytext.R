@@ -22,13 +22,15 @@
 #' @export
 #'
 #' @examples
+#'
+#'\dontrun{
 #' library(dplyr)
-#' tidytext("https://www.tidytextmining.com/sentiment.html")
 #'
-#' # Same as above but provided to cat for easy viewing
-#' tidytext("https://www.tidytextmining.com/sentiment.html") %>%
+#' constructed_url <- paste0("https://cran.r-project.org/web/packages/",
+#'  "tidytext/vignettes/tidytext.html")
+#' tidytext(constructed_url) %>%
 #'   cat
-#'
+#'}
 #'
 
 

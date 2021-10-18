@@ -10,3 +10,4 @@ TEMP
 ^docs$
 ^pkgdown$
 Man/figures/rawr_tensorflow.png
+_config.yml

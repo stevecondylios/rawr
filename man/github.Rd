@@ -25,6 +25,7 @@ A character vector of length 1 containing the R code from the target url. All co
 Retrieve raw R code from an .R file hosted on github website
 }
 \examples{
+\dontrun{
 library(dplyr)
 github("https://github.com/hadley/vis-eda/blob/master/travel.R")
 
@@ -37,5 +38,5 @@ github("https://github.com/hadley/vis-eda/blob/master/travel.R") \%>\%
 constructed_url <- paste0("https://github.com/tulip-lab/sit742/blob/",
   "master/Jupyter/SIT742P11A-MLlib-Supervised.ipynb")
 github(constructed_url)
-
+}
 }

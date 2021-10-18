@@ -27,12 +27,14 @@ A character vector of length 1 containing the R code from the target url.
 Retrieve raw R code tidytext tutorial
 }
 \examples{
+
+\dontrun{
 library(dplyr)
-tidytext("https://www.tidytextmining.com/sentiment.html")
 
-# Same as above but provided to cat for easy viewing
-tidytext("https://www.tidytextmining.com/sentiment.html") \%>\%
+constructed_url <- paste0("https://cran.r-project.org/web/packages/",
+ "tidytext/vignettes/tidytext.html")
+tidytext(constructed_url) \%>\%
   cat
-
+}
 
 }

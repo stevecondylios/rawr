@@ -25,12 +25,13 @@ A character vector of length 1 containing the R code from the target url. All co
 Retrieve raw R code from Stack Overflow website
 }
 \examples{
+\dontrun{
 library(dplyr)
 stackoverflow("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny")
 
 # Same as above but provided to cat for easy viewing
 stackoverflow("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny") \%>\%
   cat
-
+}
 
 }

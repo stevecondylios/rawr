@@ -26,11 +26,12 @@ A character vector of length 1 containing the R code from the target url.
 Retrieve raw R code from a blogdown web page
 }
 \examples{
+\dontrun{
 library(dplyr)
 blogdown("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")
 
 # Same as above but provided to cat for easy viewing
 blogdown("https://www.jtimm.net/2019/04/14/lexical-change-procrustes/")  \%>\%
   cat
-
+}
 }

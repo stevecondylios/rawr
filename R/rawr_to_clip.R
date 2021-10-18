@@ -27,7 +27,7 @@
 #' \donttest{
 #'
 #' library(dplyr)
-#' rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/topic_modeling.html")
+#' rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
 #'
 #' # Also works with the magrittr pipe
 #' "https://github.com/hadley/vis-eda/blob/master/travel.R" %>% rawr_to_clip

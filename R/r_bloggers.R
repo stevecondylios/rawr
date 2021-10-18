@@ -22,7 +22,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(dplyr)
 #' paste0("https://www.r-bloggers.com/how-to-create-a-bar-",
 #' "chart-race-in-r-mapping-united-states-city-population-1790-2010/") %>%

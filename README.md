@@ -21,7 +21,7 @@ here are some examples:
 library(rawr)
 
 # CRAN vignettes
-rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/topic_modeling.html")
+rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")
 
 # Stack Overflow
 rawr_to_clip("https://stackoverflow.com/questions/58248102/date-input-dt-r-shiny")
