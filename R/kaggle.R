@@ -48,10 +48,10 @@
 kaggle <- function(url, method, padding = "\n\n") {
 
 glob <- xml2::read_html(url) %>%
-  html_nodes(xpath = "//div[@data-component-name = 'KernelViewer']/following::script") %>%
+  html_nodes(xpath = "//div[@data-component-name = 'KernelViewerMaterialContainer']/following::script") %>%
   .[1] %>% html_text %>%
   strsplit(., "State.push\\(") %>% .[[1]] %>% .[2]  %>%
-  strsplit(., "\\);performance && performance.mark && performance.mark\\(\"KernelViewer.componentCouldBootstrap\"\\);") %>%
+  strsplit(., "\\);performance && performance.mark && performance.mark\\(\"KernelViewerMaterialContainer.componentCouldBootstrap\"\\);") %>%
   .[[1]] %>% .[1] %>% fromJSON
 
 
