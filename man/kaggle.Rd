@@ -25,7 +25,7 @@ A character vector of length 1 containing the R code from the target url. Return
 Retrieve raw R code from a kaggle notebook
 }
 \examples{
-\donttest{
+\dontrun{
 library(dplyr)
 kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-exploratory-analysis")

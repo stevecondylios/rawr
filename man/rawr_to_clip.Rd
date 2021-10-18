@@ -25,7 +25,7 @@ The raw R code from the URL provided written to the system clipboard (and so can
 Retrieve raw R code from any github, kaggle, stack overflow, blogdown, or data camp web page
 }
 \examples{
-\donttest{
+\dontrun{
 
 library(dplyr)
 rawr_to_clip("https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html")

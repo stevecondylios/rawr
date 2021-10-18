@@ -23,7 +23,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(dplyr)
 #' kaggle("https://www.kaggle.com/vrtjso/mercari-eda-more-info-than-you-can-imagine")
 #' kaggle("https://www.kaggle.com/captcalculator/a-very-extensive-mercari-exploratory-analysis")
